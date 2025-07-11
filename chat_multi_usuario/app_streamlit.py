@@ -235,5 +235,5 @@ def main():
         - "Soy Ana, ¿me recuerdas?"
         """)
 
-if __name__ == "__main__":
-    main() 
+# Ejecutar automáticamente cuando se importa (para Streamlit Cloud)
+main() 

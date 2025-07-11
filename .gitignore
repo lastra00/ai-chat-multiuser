@@ -8,4 +8,7 @@ __pycache__/
 *.pyc
 
 # Archivos del sistema
-.DS_Store 
+.DS_Store
+
+# Excluir carpeta de módulos (solo para el repositorio)
+modulo 2/ 

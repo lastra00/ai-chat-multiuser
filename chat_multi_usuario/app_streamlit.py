@@ -61,31 +61,39 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Inicializar sistema de chat
+# Función para inicializar sistema de chat
 @st.cache_resource
 def inicializar_chat():
     """Inicializar el sistema de chat (cacheable)"""
-    redis_url = os.getenv("REDIS_URL")
-    openai_api_key = os.getenv("OPENAI_API_KEY")
+    # Intentar cargar desde Streamlit secrets primero (para deploy)
+    try:
+        redis_url = st.secrets["REDIS_URL"]
+        openai_api_key = st.secrets["OPENAI_API_KEY"]
+    except (KeyError, FileNotFoundError):
+        # Fallback a variables de entorno (para desarrollo local)
+        redis_url = os.getenv("REDIS_URL")
+        openai_api_key = os.getenv("OPENAI_API_KEY")
     
     if not redis_url or not openai_api_key:
-        st.error("❌ Error: Variables de entorno no configuradas")
+        st.error("❌ Error: Variables de entorno/secretos no configuradas")
+        st.error("💡 Para desarrollo local: configura .env")
+        st.error("🌐 Para Streamlit Cloud: configura secrets en la interfaz web")
         st.stop()
     
     return ChatMultiUsuario(redis_url, openai_api_key)
 
-# Inicializar estado de sesión
-if "chat_system" not in st.session_state:
-    st.session_state.chat_system = inicializar_chat()
-
-if "messages" not in st.session_state:
-    st.session_state.messages = []
-
-if "current_user" not in st.session_state:
-    st.session_state.current_user = None
-
 def main():
     """Función principal de la aplicación"""
+    
+    # Inicializar estado de sesión
+    if "chat_system" not in st.session_state:
+        st.session_state.chat_system = inicializar_chat()
+
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
+
+    if "current_user" not in st.session_state:
+        st.session_state.current_user = None
     
     # Header principal
     st.markdown("""

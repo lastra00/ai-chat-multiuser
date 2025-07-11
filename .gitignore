@@ -1,6 +1,9 @@
 # Variables de entorno
 .env
 
+# Secretos de Streamlit
+.streamlit/secrets.toml
+
 # Entorno virtual
 venv/
 venv_diplo/

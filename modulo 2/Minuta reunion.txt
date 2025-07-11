@@ -1,0 +1,40 @@
+Fecha: 6 de noviembre de 2024
+Hora: 10:00 AM - 11:00 AM
+Lugar: Sala de Conferencias, Oficina Principal
+Asistentes:
+
+	•	Juan Pérez (Desarrollador)
+	•	Ana Gómez (Diseñadora UX)
+	•	Luis Torres (Gerente de Proyecto)
+
+Agenda:
+
+	1.	Revisión del estado actual del proyecto de la app de ecommerce.
+	2.	Discusión sobre los próximos pasos y asignación de tareas.
+	3.	Resolución de problemas y obstáculos.
+
+1. Revisión del estado actual:
+
+	•	Juan: Informó que se ha completado el desarrollo del módulo de autenticación de usuarios. Está funcionando correctamente en el entorno de pruebas.
+	•	Ana: Mencionó que la interfaz de usuario para la página de inicio ha sido diseñada y enviada para revisión. La retroalimentación inicial ha sido positiva.
+	•	Luis: Confirmó que el sistema de gestión de productos está en desarrollo y se espera que esté listo para pruebas en dos semanas.
+
+2. Próximos pasos:
+
+	•	Juan: Continuará trabajando en la integración del sistema de pago. Se estima que estará listo para la próxima reunión.
+	•	Ana: Se encargará de ajustar la interfaz de usuario según la retroalimentación recibida y comenzará a trabajar en la sección de carrito de compras.
+	•	Luis: Coordinará una reunión con el equipo de marketing para discutir estrategias de lanzamiento y la necesidad de contenido visual adicional.
+
+3. Problemas y obstáculos:
+
+	•	Juan: Reportó un problema menor con la API de envío. Se comunicará con el proveedor para resolverlo.
+	•	Ana: Necesita aclaraciones sobre los requisitos de accesibilidad para la app. Luis se ofrecerá para investigar y proporcionar directrices.
+	•	Luis: Aseguró que se está gestionando el presupuesto y se están monitoreando los gastos del proyecto para evitar desviaciones.
+
+Acciones a seguir:
+
+	•	Juan: Continuar con la integración del sistema de pago y resolver el problema con la API de envío.
+	•	Ana: Ajustar la interfaz de usuario y empezar el diseño del carrito de compras.
+	•	Luis: Investigar sobre los requisitos de accesibilidad y coordinar la reunión con marketing.
+
+Próxima reunión: 13 de noviembre de 2024, a las 10:00 AM.

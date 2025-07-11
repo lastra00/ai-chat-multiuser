@@ -65,11 +65,19 @@ st.markdown("""
 @st.cache_resource
 def inicializar_chat():
     """Inicializar el sistema de chat (cacheable)"""
-    redis_url = os.getenv("REDIS_URL")
-    openai_api_key = os.getenv("OPENAI_API_KEY")
+    # Intentar cargar desde Streamlit secrets primero (para deploy)
+    try:
+        redis_url = st.secrets["REDIS_URL"]
+        openai_api_key = st.secrets["OPENAI_API_KEY"]
+    except (KeyError, FileNotFoundError):
+        # Fallback a variables de entorno (para desarrollo local)
+        redis_url = os.getenv("REDIS_URL")
+        openai_api_key = os.getenv("OPENAI_API_KEY")
     
     if not redis_url or not openai_api_key:
-        st.error("❌ Error: Variables de entorno no configuradas")
+        st.error("❌ Error: Variables de entorno/secretos no configuradas")
+        st.error("💡 Para desarrollo local: configura .env")
+        st.error("🌐 Para Streamlit Cloud: configura secrets en la interfaz web")
         st.stop()
     
     return ChatMultiUsuario(redis_url, openai_api_key)

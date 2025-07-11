@@ -75,7 +75,19 @@ OPENAI_API_KEY=tu-api-key-aqui
 
 ### 4. Ejecutar el Sistema
 
-#### Opción A: Interfaz Web (Streamlit) - ⭐ Recomendada
+#### Opción A: Deploy en Web (Streamlit Cloud) - 🌐 Recomendada
+**Aplicación desplegada**: [Ver aplicación en vivo](https://tu-app-name.streamlit.app)
+
+Para hacer tu propio deploy:
+1. Ve a [share.streamlit.io](https://share.streamlit.io)
+2. Conecta tu repositorio GitHub
+3. Selecciona la rama `deploy/streamlit-cloud`
+4. Configura los secretos (Redis URL y OpenAI API Key)
+5. ¡Listo! Tu app estará online
+
+**📋 Instrucciones detalladas**: Ver [DEPLOY.md](DEPLOY.md)
+
+#### Opción B: Interfaz Web Local
 ```bash
 cd chat_multi_usuario
 python run_app.py
@@ -86,12 +98,12 @@ O directamente:
 streamlit run app_streamlit.py
 ```
 
-#### Opción B: Terminal/Consola
+#### Opción C: Terminal/Consola
 ```bash
 python chat_multi_usuario.py
 ```
 
-#### Opción C: Google Colab
+#### Opción D: Google Colab
 1. Abrir `Chat_Multi_Usuario_Ejercicio.ipynb` en Google Colab
 2. Configurar credenciales en la sección 2
 3. Ejecutar todas las celdas secuencialmente

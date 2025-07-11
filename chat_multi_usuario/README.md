@@ -14,6 +14,13 @@ Crear un sistema de chat que:
 
 ## ✨ Características Principales
 
+### 🌐 Interfaz Web Moderna (Streamlit)
+- **Interfaz gráfica intuitiva** con diseño moderno
+- **Chat en tiempo real** con componentes nativos
+- **Panel de control lateral** para gestión de usuarios
+- **Visualización de historial** por usuario
+- **CSS personalizado** para mejor experiencia
+
 ### 🔍 Detección Inteligente de Usuarios
 - Reconoce automáticamente frases como "Soy Pablo" o "Me llamo Ana"
 - Utiliza **Output Parsers** de Pydantic para estructurar la detección
@@ -30,10 +37,11 @@ Crear un sistema de chat que:
 - Interfaz tipo asistente de voz (Alexa/Google Home)
 
 ### 🛠️ Funcionalidades Avanzadas
+- **Interfaz web moderna** con Streamlit
+- **Múltiples modos de ejecución** (web, terminal, Colab)
 - Comandos especiales para gestión de usuarios
 - Pruebas automáticas del sistema
 - Funciones de utilidad para debugging
-- Chat interactivo en Google Colab
 
 ## 🚀 Instalación y Uso
 
@@ -67,12 +75,23 @@ OPENAI_API_KEY=tu-api-key-aqui
 
 ### 4. Ejecutar el Sistema
 
-#### Opción A: Archivo Python
+#### Opción A: Interfaz Web (Streamlit) - ⭐ Recomendada
+```bash
+cd chat_multi_usuario
+python run_app.py
+```
+
+O directamente:
+```bash
+streamlit run app_streamlit.py
+```
+
+#### Opción B: Terminal/Consola
 ```bash
 python chat_multi_usuario.py
 ```
 
-#### Opción B: Google Colab
+#### Opción C: Google Colab
 1. Abrir `Chat_Multi_Usuario_Ejercicio.ipynb` en Google Colab
 2. Configurar credenciales en la sección 2
 3. Ejecutar todas las celdas secuencialmente
@@ -82,10 +101,13 @@ python chat_multi_usuario.py
 
 ```
 chat-multi-usuario/
-├── chat_multi_usuario.py          # Sistema principal
+├── chat_multi_usuario.py          # Sistema principal (terminal)
+├── app_streamlit.py               # Interfaz web con Streamlit
+├── run_app.py                     # Script para ejecutar la app web
 ├── Chat_Multi_Usuario_Ejercicio.ipynb  # Notebook de Google Colab
 ├── README.md                      # Este archivo
-└── requirements.txt               # Dependencias
+├── requirements.txt               # Dependencias
+└── .env.example                   # Ejemplo de variables de entorno
 ```
 
 ## 🎮 Cómo Usar el Chat
@@ -197,6 +219,7 @@ class DeteccionUsuario(BaseModel):
 - `redis` >= 4.0.0
 - `pydantic` >= 2.0.0
 - `python-dotenv` >= 1.0.0
+- `streamlit` >= 1.28.0
 
 ### Credenciales Necesarias
 - **OpenAI API Key**: Para acceso a GPT-4o-mini

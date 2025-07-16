@@ -81,7 +81,7 @@ OPENAI_API_KEY=tu-api-key-aqui
 Para hacer tu propio deploy:
 1. Ve a [share.streamlit.io](https://share.streamlit.io)
 2. Conecta tu repositorio GitHub
-3. Selecciona la rama `main`
+3. Selecciona la rama `deploy/streamlit-cloud`
 4. Configura los secretos (Redis URL y OpenAI API Key)
 5. ¡Listo! Tu app estará online
 

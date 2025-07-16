@@ -3,6 +3,7 @@
 
 # Secretos de Streamlit
 .streamlit/secrets.toml
+chat_multi_usuario/.streamlit/secrets.toml
 
 # Entorno virtual
 venv/

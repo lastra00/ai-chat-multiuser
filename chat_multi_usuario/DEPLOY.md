@@ -3,7 +3,7 @@
 ## 📋 Pasos para desplegar tu aplicación
 
 ### **1. Preparar el repositorio**
-✅ Ya tienes todo listo en la rama `deploy/streamlit-cloud`
+✅ Ya tienes todo listo en la rama `main`
 
 ### **2. Ir a Streamlit Cloud**
 1. Ve a **[share.streamlit.io](https://share.streamlit.io)**
@@ -13,7 +13,7 @@
 ### **3. Crear nueva aplicación**
 1. Haz clic en **"New app"**
 2. Selecciona tu repositorio: `lastra00/ai-chat-multiuser`
-3. Selecciona la rama: `deploy/streamlit-cloud`
+3. Selecciona la rama: `main`
 4. Especifica el archivo principal: `chat_multi_usuario/streamlit_app.py`
 5. Haz clic en **"Deploy!"**
 
@@ -69,7 +69,7 @@ Tu aplicación estará disponible en: `https://tu-app-name.streamlit.app`
 - **SSL incluido**: Conexión segura HTTPS automática
 
 ### **🔄 Actualizaciones:**
-- Haz push a la rama `deploy/streamlit-cloud`
+- Haz push a la rama `main`
 - Streamlit Cloud detectará los cambios automáticamente
 - La aplicación se actualizará en 1-2 minutos
 

@@ -121,8 +121,8 @@ def main():
         
         # Identificación manual
         st.subheader("🔑 Identificación Manual")
-        nuevo_usuario = st.text_input("Cambiar usuario:", placeholder="Ingresa tu nombre")
-        if st.button("🔄 Cambiar Usuario") and nuevo_usuario:
+        nuevo_usuario = st.text_input("Cambiar usuario:", placeholder="Ingresa tu nombre", key="cambiar_usuario_input")
+        if st.button("🔄 Cambiar Usuario", key="cambiar_usuario_btn") and nuevo_usuario:
             st.session_state.chat_system.cambiar_usuario(nuevo_usuario)
             st.session_state.current_user = nuevo_usuario
             st.success(f"✅ Usuario cambiado a: {nuevo_usuario}")
@@ -132,7 +132,7 @@ def main():
         
         # Gestión de usuarios
         st.subheader("👥 Usuarios Registrados")
-        if st.button("📝 Listar Usuarios"):
+        if st.button("📝 Listar Usuarios", key="listar_usuarios_btn"):
             usuarios = st.session_state.chat_system.listar_usuarios_con_historial()
             if usuarios:
                 st.write("**Usuarios con historial:**")
@@ -147,10 +147,11 @@ def main():
         st.subheader("📋 Ver Historial")
         usuario_historial = st.selectbox(
             "Usuario:", 
-            ["Selecciona..."] + st.session_state.chat_system.listar_usuarios_con_historial()
+            ["Selecciona..."] + st.session_state.chat_system.listar_usuarios_con_historial(),
+            key="select_usuario_historial"
         )
         
-        if st.button("📖 Ver Historial") and usuario_historial != "Selecciona...":
+        if st.button("📖 Ver Historial", key="ver_historial_btn") and usuario_historial != "Selecciona...":
             with st.expander(f"Historial de {usuario_historial}", expanded=True):
                 historial = st.session_state.chat_system.obtener_historial(usuario_historial)
                 if historial:
@@ -164,7 +165,7 @@ def main():
         st.markdown("---")
         
         # Limpiar chat
-        if st.button("🗑️ Limpiar Chat"):
+        if st.button("🗑️ Limpiar Chat", key="limpiar_chat_btn"):
             st.session_state.messages = []
             st.rerun()
     
@@ -179,7 +180,7 @@ def main():
                 st.markdown(message["content"])
     
     # Input del usuario
-    if prompt := st.chat_input("Escribe tu mensaje aquí..."):
+    if prompt := st.chat_input("Escribe tu mensaje aquí...", key="main_chat_input"):
         # Agregar mensaje del usuario
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
@@ -233,7 +234,4 @@ def main():
         - "Soy Pablo, ¿cómo estás?"
         - "Recuerda que mi color favorito es el azul"
         - "Soy Ana, ¿me recuerdas?"
-        """)
-
-# Ejecutar automáticamente cuando se importa (para Streamlit Cloud)
-main() 
+        """) 
